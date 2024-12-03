@@ -8,13 +8,17 @@ const packageJson = JSON.parse(fs.readFileSync(filePath, "utf8"));
 // exportsセクションを更新
 if (packageJson.exports) {
 	for (const key in packageJson.exports) {
-		const entry = packageJson.exports[key];
+		if(key !=="./dist/style.css") {
 
-		// 各エントリのパスからdist/を削除
-		for (const subKey in entry) {
-			if (typeof entry[subKey] === "string") {
-				entry[subKey] = entry[subKey].replace(/^\.\/dist\//, "./");
+			const entry = packageJson.exports[key];
+			// 各エントリのパスからdist/を削除
+			for (const subKey in entry) {
+					if (typeof entry[subKey] === "string") {
+						entry[subKey] = entry[subKey].replace(/^\.\/dist\//, "./");
+					}
 			}
+		} else {
+			packageJson.exports[key] = packageJson.exports[key].replace(/^\.\/dist\//, "./");
 		}
 	}
 }

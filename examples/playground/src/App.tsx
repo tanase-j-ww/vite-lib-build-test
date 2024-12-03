@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Hoge } from 'vite-lib-build-test'
 import { Button } from "vite-lib-build-test/components"
+import "vite-lib-build-test/dist/style.css"
 import './App.css'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -21,7 +22,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <button className='custom-button' onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
         <Button hoge="hogehogehoge">hoge</Button>
