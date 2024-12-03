@@ -23,8 +23,7 @@
 			"import": "./dist/components/index.js",
 			"require": "./dist/components/index.cjs",
 			"types": "./dist/components/index.d.ts"
-		},
-		 "./dist/style.css": "./dist/style.css"
+		}
 	},
 	"scripts": {
 		"dev": "vite",
